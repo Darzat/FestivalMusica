@@ -12,6 +12,9 @@ body{
     &.fijar-body{
         overflow: hidden;
     }
+    &.body-scroll{
+        padding-top: 8.5rem;
+    }
 }
 p{
     color: v.$negro;

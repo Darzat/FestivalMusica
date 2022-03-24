@@ -2,6 +2,10 @@ const {src,dest,watch, parallel}= require('gulp');
 //css
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const postcss = require('postcss');
+
 //imagenes
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
@@ -12,7 +16,8 @@ function css(done){
     // identificar el archivo .scss a compilar
     src('src/scss/**/*.scss')
         .pipe(plumber())
-        .pipe(sass())// compilarlo
+        .pipe(sass())
+        // .pipe(postcss([autoprefixer(), css()]))
         .pipe(dest('build/css'))// almacenarla
     done();
 }
